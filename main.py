@@ -1,3 +1,13 @@
+import csv 
+import overheads 
+import cash_on_hand 
+import profit_and_loss 
+
+def main(): 
+    overheads.overheads_function() 
+    cash_on_hand.cash_on_hand_function() 
+    profit_and_loss.profit_and_Loss_function() 
+    
 # team members text file
 from pathlib import Path
 import csv
