@@ -47,6 +47,7 @@ for record in Profit_And_Loss:
         comparison = "HIGHER"
         # Increment the counter for higher net profit days
         higher_net_profit_days += 1  
+    #Check if net profit is negative(indicating a deficit)
     elif profit_difference < 0:
         comparison = "LOWER"
         # Append the deficit day and amount to the list
@@ -66,7 +67,7 @@ for record in Profit_And_Loss:
 # Print the profit deficit information from the list
 for result in aList:
     deficit_day, deficit_amount = result
-    print(f"[PROFIT DEFICIT] DAY: {deficit_day}, AMOUNT: USD{abs(int(deficit_amount))}")
+    print(f"[PROFIT DEFICIT] DAY: {profit_deficit_day}, AMOUNT: USD{abs(int(profit_deficit_amount))}")
 
 
 
