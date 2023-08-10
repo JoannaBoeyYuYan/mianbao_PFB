@@ -67,7 +67,7 @@ for record in Profit_And_Loss:
 # Print the profit deficit information from the list
 for result in aList:
     deficit_day, deficit_amount = result
-    print(f"[PROFIT DEFICIT] DAY: {profit_deficit_day}, AMOUNT: USD{abs(int(profit_deficit_amount))}")
+    print(f"[PROFIT DEFICIT] DAY: {deficit_day}, AMOUNT: USD{abs(int(deficit_amount))}")
 
 
 
