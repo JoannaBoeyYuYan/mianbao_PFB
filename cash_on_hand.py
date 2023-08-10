@@ -58,6 +58,3 @@ for result in coh_results:
 for result in coh_results:
     print(f"[CASH {result[0]}] DAY: {result[1]} , AMOUNT: USD {result[2]}")
 
-print("\n")
-print("[CASH SURPLUS]: CASH SURPLUS ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
-print(f"[HIGHEST CASH DEFICIT] DAY: {cash_deficit_day}, AMOUNT: USD{abs(int(cash_deficit_amount))}")
