@@ -12,7 +12,7 @@ with fp.open(mode='r', encoding='UTF-8', newline='') as file:
     for row in reader:
         overheads.append({'Category': row[0], 'Amount': float(row[1])})
 
-print(overheads)   #-To check through the data 
+# print(overheads)   #-To check through the data 
 
 def highest_overhead_category(overheads):
     """
@@ -30,17 +30,14 @@ def highest_overhead_category(overheads):
 
     return highest_category, max_overhead
 
-
 folder_path = Path.cwd() / 'csv_reports'
 file_name = 'Overheads.csv'
 file_path = folder_path / file_name
-print(file_path.exists()) # check if file exists
+# print(file_path.exists()) # check if file exists
 
 highest_category, max_overhead = highest_overhead_category(overheads)
 
-if highest_category is not None:
-    highest_category = highest_category.upper()
-    print(f"[HIGHEST OVERHEAD] {highest_category}: {max_overhead}","%", )
-else:
-    print("No data found in the CSV file or all overhead values are zero.")
+highest_category = highest_category.upper()
+print(f"[HIGHEST OVERHEAD] {highest_category}: {max_overhead} %" )
+
 
