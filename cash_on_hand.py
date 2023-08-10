@@ -65,3 +65,7 @@ for result in coh_results:
 
 # print('[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY')
 # print('[CASH DEFICITS] CASH ON EACH DAY IS LOWER THAN THE PREVIOUS DAY')
+print("\n")
+print(f"[CASH SURPLUS]: NET PROFIT ON EACH DAY ARE HIGHER THAN PREVIOUS DAY")
+print(f"[HIGHEST CASH SURPLUS] DAY: {highest_surplus_day}, AMOUNT: USD{int(highest_surplus_amount)}")
+print(f"[CASH DEFICIT] DAY: {cash_deficit_day}, AMOUNT: USD{abs(int(cash_deficit_amount))}")
