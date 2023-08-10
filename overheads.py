@@ -3,7 +3,7 @@ def overheads_function():
     import csv
 
     fp = Path.cwd()/'csv_reports'/"Overheads.csv"
-    #print(fp.exists())   - To check if file is present
+    # print(fp.exists())   - To check if file is present
 
     overheads = []
 
@@ -32,7 +32,7 @@ def overheads_function():
         return highest_category, max_overhead
 
     folder_path = Path.cwd() / 'csv_reports'
-    file_name = 'Overheads.csv'
+    file_name = 'overheads.csv'
     file_path = folder_path / file_name
     # print(file_path.exists()) # check if file exists
 
