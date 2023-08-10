@@ -4,28 +4,15 @@ import csv
 fp = Path.cwd()/'csv_reports'/"Overheads.csv"
 #print(fp.exists())   - To check if file is present
 
-Overheads = []
+overheads = []
 
-with fp.open(mode= "r", encoding= "UTF-8", newline= "") as file:
+with fp.open(mode='r', encoding='UTF-8', newline='') as file:
     reader = csv.reader(file)
-    next(reader)
+    next(reader) 
     for row in reader:
-        Overheads.append([row[0], [row[1]]])
+        overheads.append({'Category': row[0], 'Amount': float(row[1])})
 
-#print(Overheads)   #-To check through the data 
-
-def read_overheads_csv(file_path):
-    """
-    - Reads overheads csv
-    - Parameter needed: file_path 
-    """
-    overheads = []
-    with file_path.open(mode='r', encoding='UTF-8', newline='') as file:
-        reader = csv.reader(file)
-        next(reader) 
-        for row in reader:
-            overheads.append({'Category': row[0], 'Amount': float(row[1])})
-    return overheads
+print(overheads)   #-To check through the data 
 
 def highest_overhead_category(overheads):
     """
@@ -47,16 +34,13 @@ def highest_overhead_category(overheads):
 folder_path = Path.cwd() / 'csv_reports'
 file_name = 'Overheads.csv'
 file_path = folder_path / file_name
+print(file_path.exists()) # check if file exists
 
-if file_path.exists():
-    overheads_data = read_overheads_csv(file_path)
+highest_category, max_overhead = highest_overhead_category(overheads)
 
-    highest_category, max_overhead = highest_overhead_category(overheads_data)
-
-    if highest_category is not None:
-        highest_category = highest_category.upper()
-        print(f"[HIGHEST OVERHEAD] {highest_category}: {max_overhead}","%", )
-    else:
-        print("No data found in the CSV file or all overhead values are zero.")
+if highest_category is not None:
+    highest_category = highest_category.upper()
+    print(f"[HIGHEST OVERHEAD] {highest_category}: {max_overhead}","%", )
 else:
-    print(f"File not found: {file_path}")
+    print("No data found in the CSV file or all overhead values are zero.")
+
