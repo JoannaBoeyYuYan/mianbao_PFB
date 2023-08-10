@@ -1,48 +1,45 @@
+from pathlib import Path
 import csv 
 import overheads 
 import cash_on_hand 
-import profit_and_loss 
+# import profit_and_loss 
 
 def main(): 
-    overheads.overheads_function() 
-    cash_on_hand.cash_on_hand_function() 
-    profit_and_loss.profit_and_Loss_function() 
+    highest_category, max_overhead  = overheads.overheads_function() 
+    cash_on_hand_output = cash_on_hand.cash_on_hand_function() 
+    # profit_and_loss.profit_and_Loss_function()
     
+    # if cash_on_hand_output:
+    #     for flag, day, amount in cash_on_hand_output:
+    #         file.write(f"[CASH {flag}] DAY: {day} , AMOUNT: USD {amount}")
+     # Create a path object for summary_report.txt
+    fp = Path.cwd() / "summary_report.txt" 
+    fp.touch()   
+    # Open the file for writing    
+    with fp.open(mode='w', encoding='UTF-8', newline="") as file:
+        if cash_on_hand_output:            
+            for flag, day, amount in cash_on_hand_output:
+                file.write(f"[CASH {flag}] DAY: {day}, AMOUNT: USD {amount}\n")
+
 main()
+# cash_on_hand_output = main()
+# # create a path object for summary_report.txt
+# fp = Path.cwd()/"summary_report.txt"
+# # create new file in folder
+# fp.touch()
+# # check file path of this new file
+# print(fp)
+# # check if file path exists
+# print(fp.exists())
 
-# team members text file
-from pathlib import Path
-import csv
+# with fp.open(mode='w', encoding ='UTF-8', newline = "") as file:
+# # Create a writer object: 'writer' with 'csv.writer()'
+#     file.write('hello')
+#     file.write()
 
-# create a path object for team_members.txt
-fp = Path.cwd()/"team_members.txt"
-# create new file in folder
-fp.touch()
-# check file path of this new file
-print(fp)
-# check if file path exists
-print(fp.exists())
 
-# create a list to put names and student ID
-members_list = ['Bradley Matthias Ganesh (S10255891H)', 
-                'Joanna Boey Yu Yan (S10258045H)',
-                'Yee Jia Ying (S10261025F)',
-                'Evangelyn Siau Yi Xuen (S10257334K)',
-                'Lim Jing En (S10255896C)']
 
-# writing results to text file
-with fp.open(mode='w', encoding ='UTF-8', newline = "") as file:
-    # Create a writer object: 'writer' with 'csv.writer()'
-    writer = csv.writer(file)
-    # write header
-    writer.writerow(['Name (Student ID)'])
-    # write data
-    for member in members_list:
-        writer.writerow([member])
 
-# print the results to read here
-# with fp.open(mode='r', encoding ='UTF-8', newline = "") as file:
-#     reader = csv.reader(file)
-#     next(reader) # skip header
-#     for line in reader:
-#         print(line)
+
+
+# ------------------------------------------------------------------------------------------
