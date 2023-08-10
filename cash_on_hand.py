@@ -60,4 +60,4 @@ for result in coh_results:
 
 print("\n")
 print("[CASH SURPLUS]: CASH SURPLUS ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
-print(f"[CASH DEFICIT] DAY: {cash_deficit_day}, AMOUNT: USD{abs(int(cash_deficit_amount))}")
+print(f"[HIGHEST CASH DEFICIT] DAY: {cash_deficit_day}, AMOUNT: USD{abs(int(cash_deficit_amount))}")
