@@ -16,7 +16,7 @@ members_list = ['Bradley Matthias Ganesh (S10255891H)',
                 'Joanna Boey Yu Yan (S10258045H)',
                 'Yee Jia Ying (S10261025F)',
                 'Evangelyn Siau Yi Xuen (S10257334K)',
-                'Lim Jing En (S10255896)']
+                'Lim Jing En (S10255896C)']
 
 # writing results to text file
 with fp.open(mode='w', encoding ='UTF-8', newline = "") as file:
