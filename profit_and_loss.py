@@ -47,7 +47,8 @@ for record in Profit_And_Loss:
         comparison = "HIGHER"
         # Increment the counter for higher net profit days
         higher_net_profit_days += 1  
-    elif profit_difference < 0:
+    #Check if net profit is negative(indicating a deficit)
+    elif net_profit < 0:
         comparison = "LOWER"
         # Append the deficit day and amount to the list
         aList.append([day, profit_difference])
