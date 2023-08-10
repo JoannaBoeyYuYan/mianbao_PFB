@@ -32,15 +32,6 @@ profit_deficit_day = None
 profit_deficit_amount = 0
 # Initialize a counter for the days with higher net profit than the previous day
 higher_net_profit_days = 0
-# Compute the difference in net profit column
-previous_net_profit = 0
-highest_surplus_day = None
-highest_surplus_amount = 0
-profit_deficit_day = None
-profit_deficit_amount = 0
-# Initialize a counter for the days with higher net profit than the previous day
-higher_net_profit_days = 0
-
 for record in Profit_And_Loss:
     day, sales, trading_profit, operating_expense, net_profit = record
 
@@ -53,17 +44,16 @@ for record in Profit_And_Loss:
 
     # Check if the net profit is higher, lower, or the same as the previous day
     if profit_difference > 0:
-        comparison = "SURPLUS"
+        comparison = "HIGHER"
         # Increment the counter for higher net profit days
         higher_net_profit_days += 1  
+    #Check if net profit is negative(indicating a deficit)
     elif profit_difference < 0:
-        comparison = "DEFICIT"
+        comparison = "LOWER"
+        # Append the deficit day and amount to the list
+        aList.append([day, profit_difference])
     else:
         comparison = "-"
-
-    # print the day, net profit, and difference, along with whether there is higher or lower net profit than the previous day
-    print(f"Day: {day}, Net Profit: USD{int(net_profit)}, Difference: USD {abs(int(profit_difference))}, "
-          f"[NET PROFIT]: {comparison}")
 
     # Check if the current surplus is the highest so far
     if profit_difference > highest_surplus_amount:
@@ -77,13 +67,13 @@ for record in Profit_And_Loss:
 # Print the profit deficit information from the list
 for result in aList:
     deficit_day, deficit_amount = result
-    print(f"[PROFIT DEFICIT] DAY: {deficit_day}, AMOUNT: USD {abs(int(deficit_amount))}")
+    print(f"[PROFIT DEFICIT] DAY: {deficit_day}, AMOUNT: USD{abs(int(deficit_amount))}")
 
 
 
 
 # print out the net profit surplus, highest net profit surplus [day and amount], and profit deficit [day and amount]
 print("\n")
-print(f"[NET PROFIT SURPLUS]: NET PROFIT ON {higher_net_profit_days} DAYS ARE HIGHER THAN PREVIOUS DAY")
+print(f"[NET PROFIT SURPLUS]: NET PROFIT ON EACH DAY ARE HIGHER THAN PREVIOUS DAY")
 print(f"[HIGHEST NET PROFIT SURPLUS] DAY: {highest_surplus_day}, AMOUNT: USD{int(highest_surplus_amount)}")
 print(f"[PROFIT DEFICIT] DAY: {profit_deficit_day}, AMOUNT: USD{abs(int(profit_deficit_amount))}")
