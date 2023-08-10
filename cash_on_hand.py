@@ -1,6 +1,6 @@
 from pathlib import Path
 import csv
-
+j
 
 # create a file to csv file.
 fp = Path.cwd()/'csv_reports'/"cash_on_hand.csv"
