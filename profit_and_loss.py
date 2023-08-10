@@ -70,10 +70,8 @@ for result in aList:
     print(f"[PROFIT DEFICIT] DAY: {deficit_day}, AMOUNT: USD{abs(int(deficit_amount))}")
 
 
-
-
 # print out the net profit surplus, highest net profit surplus [day and amount], and profit deficit [day and amount]
 print("\n")
-print(f"[NET PROFIT SURPLUS]: NET PROFIT ON {higher_net_profit_days} DAYS ARE HIGHER THAN PREVIOUS DAY")
+print(f"[NET PROFIT SURPLUS]: NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
 print(f"[HIGHEST NET PROFIT SURPLUS] DAY: {highest_surplus_day}, AMOUNT: USD{int(highest_surplus_amount)}")
 print(f"[PROFIT DEFICIT] DAY: {profit_deficit_day}, AMOUNT: USD{abs(int(profit_deficit_amount))}")
