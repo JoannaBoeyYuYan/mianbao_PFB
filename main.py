@@ -29,8 +29,8 @@ with fp.open(mode='w', encoding ='UTF-8', newline = "") as file:
         writer.writerow([member])
 
 # print the results to read here
-with fp.open(mode='r', encoding ='UTF-8', newline = "") as file:
-    reader = csv.reader(file)
-    next(reader) # skip header
-    for line in reader:
-        print(line)
+# with fp.open(mode='r', encoding ='UTF-8', newline = "") as file:
+#     reader = csv.reader(file)
+#     next(reader) # skip header
+#     for line in reader:
+#         print(line)
