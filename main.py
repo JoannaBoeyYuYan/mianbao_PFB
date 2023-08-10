@@ -30,4 +30,5 @@ def main():
     #     for line in reader:
     #         print(line)
 
-main()
+if __name__ == "__main__":
+    main()

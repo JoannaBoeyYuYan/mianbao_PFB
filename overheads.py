@@ -39,7 +39,6 @@ def overheads_function():
     highest_category, max_overhead = highest_overhead_category(overheads)
 
     highest_category = highest_category.upper()
-    print(f"[HIGHEST OVERHEAD] {highest_category}: {max_overhead} %" )
 
     return highest_category, max_overhead
 
