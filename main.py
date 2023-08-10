@@ -8,6 +8,8 @@ def main():
     cash_on_hand.cash_on_hand_function() 
     profit_and_loss.profit_and_Loss_function() 
     
+main()
+
 # team members text file
 from pathlib import Path
 import csv
